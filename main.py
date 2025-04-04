@@ -47,9 +47,6 @@ while True:
 
             image_with_object = all_images[len(all_images) // 2]
 
-
-
-
     status_list.append(status)
     status_list = status_list[-2:]
 
@@ -57,7 +54,7 @@ while True:
     # когда в кадре появится прямоугольник, будет [1, 1]
     # в момент когда прямоугольник исчезнет, будет [1, 0], и в этот момент произойдет отправка фото
     if status_list[0] == 1 and status_list[1] == 0:
-        send_email()
+        send_email(image_with_object)
 
     cv2.imshow('Video', frame)
 
